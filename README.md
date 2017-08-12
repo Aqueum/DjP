@@ -59,6 +59,11 @@ DATABASES = {
 ```
 - edit `ALLOWED_HOSTS` in `myproject/myproject/settings.py` to: `ALLOWED_HOSTS = ['.localhost', '35.176.170.23', '192.168.1.65', '109.157.214.104', '127.0.0.1']` these are: local host, my lightsail ip, mu local host according to system, my public ip, standard localhost
 
-- ``
-- ``
-- ``
+## Migrate the Database and Test Project
+- `cd /vagrant/myproject`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+- `python manage.py createsuperuser` I used myprojectuser & password2
+- `python manage.py runserver 0.0.0.0:8000`
+- [localhost:8000](http://localhost:8000/)
+- [localhost:8000/admin](http://localhost:8000/admin)
