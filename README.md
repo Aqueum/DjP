@@ -7,8 +7,7 @@
   - Create & navigate to new folder in terminal (I'm calling mine `DjP` cloning it from an empty GitHub & copying in the .gitignore from my [DjangoPostgres](https://github.com/Aqueum/DjangoPostgres/blob/master/.gitignore))
   - `vagrant init ubuntu/xenial64`
   - edit vagrant file
-    - change `# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
-`
+    - change `# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"`
     - to `config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1"`
   - `vagrant up` if first time or `vagrant reload` to load the new vagrant file
   - `vagrant box update` to get latest version
