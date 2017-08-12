@@ -3,7 +3,7 @@
 .idea/
 *console.log
 .DS_Store
-ENV/
+myprojectenv/
 
 # Python bite code
 *.pyc
