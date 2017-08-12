@@ -27,10 +27,11 @@ CREATE DATABASE myproject;
 CREATE USER myprojectuser WITH PASSWORD 'password';
 ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
 ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
-ALTER ROLE myprojectuser SET timezone TO 'UTC';
+ALTER ROLE myprojectuser SET timezone TO 'Europe/London';
 GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 ```
 - `\q` to exit PostgreSQL
+(warning tutorial said timezone UTC)
 
 ## Install Django within a Virtual Environment
 - `sudo -H pip3 install --upgrade pip`(because it always complains)
@@ -43,20 +44,23 @@ GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 - `django-admin.py startproject myproject .`
 
 ## Configure the Django Database Settings
-- edit `DATABASES` in `myproject/myproject/settings.py` to:
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
+- Edit `myproject/myproject/settings.py` to have: 
+  - `ALLOWED_HOSTS = ['.localhost', '35.176.170.23', '192.168.1.65', '109.157.214.104', '127.0.0.1']` these are: local host, my lightsail ip, mu local host according to system, my public ip, standard localhost
+  - `DATABASES` as:
+    ```
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'myproject',
+            'USER': 'myprojectuser',
+            'PASSWORD': 'password',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
     }
-}
-```
-- edit `ALLOWED_HOSTS` in `myproject/myproject/settings.py` to: `ALLOWED_HOSTS = ['.localhost', '35.176.170.23', '192.168.1.65', '109.157.214.104', '127.0.0.1']` these are: local host, my lightsail ip, mu local host according to system, my public ip, standard localhost
+    ```
+  - `LANGUAGE_CODE = 'en-gb'`
+  - `TIME_ZONE = 'Europe/London'`
 
 ## Migrate the Database and Test Project
 - `cd /vagrant/myproject`
@@ -161,7 +165,9 @@ urlpatterns = [
 ]
 ```
 
+## Mod database
 
+- `python manage.py migrate` to create tables for INSTALLED_APPS
 
 
 
