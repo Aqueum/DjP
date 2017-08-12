@@ -154,7 +154,7 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
 ]
 ```
-- Edit `mysite/urls.py` so we have:
+- Edit `myproject/urls.py` so we have:
 ```
 from django.conf.urls import include, url
 from django.contrib import admin
