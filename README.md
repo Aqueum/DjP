@@ -13,7 +13,6 @@
   - `vagrant box update` to get latest version
   - `vagrant ssh` to SSH into your new box
   - `cd /vagrant` to get into the shared diectory
-  ? is the issue around the login at this stage - I'm currently in as ubuntu@ubuntu-xenial
 
 the following is from [how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04):
 ## Install the Components from the Ubuntu Repositories 
