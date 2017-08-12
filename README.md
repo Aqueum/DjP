@@ -27,11 +27,10 @@ CREATE DATABASE myproject;
 CREATE USER myprojectuser WITH PASSWORD 'password';
 ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
 ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
-ALTER ROLE myprojectuser SET timezone TO 'Europe/London';
+ALTER ROLE myprojectuser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 ```
 - `\q` to exit PostgreSQL
-(warning tutorial said timezone UTC)
 
 ## Install Django within a Virtual Environment
 - `sudo -H pip3 install --upgrade pip`(because it always complains)
@@ -60,7 +59,8 @@ GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
     }
     ```
   - `LANGUAGE_CODE = 'en-gb'`
-  - `TIME_ZONE = 'Europe/London'`
+  - `TIME_ZONE = 'UTC'`
+still not completely sure if this should be `'UTC'` or `'Europe/London'`
 
 ## Migrate the Database and Test Project
 - `cd /vagrant/myproject`
