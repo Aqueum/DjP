@@ -12,6 +12,7 @@
   - `vagrant up` if first time or `vagrant reload` to load the new vagrant file
   - `vagrant box update` to get latest version
   - `vagrant ssh` to SSH into your new box
+  - `cd /vagrant` to get into the shared diectory
   ? is the issue around the login at this stage - I'm currently in as ubuntu@ubuntu-xenial
 
 the following is from [how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04):
@@ -31,8 +32,8 @@ the following is from [how-to-use-postgresql-with-your-django-application-on-ubu
 
 ## Install Django within a Virtual Environment
 - `sudo -H pip3 install virtualenv` (added the -H at the prompts suggestion)
-- `mkdir ~/myproject`
-- `cd ~/myproject`
+- `mkdir /vagrant/myproject`
+- `cd /vagrant/myproject`
 - `virtualenv myprojectenv` to create virtual environment
 - `source myprojectenv/bin/activate`
 - `pip install django psycopg2`
