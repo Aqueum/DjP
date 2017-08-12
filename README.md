@@ -283,7 +283,7 @@ body {
 }
 ```
 - add file `polls/static/polls/images/python.gif`
-
+- add `admin.site.site_header = 'Polls admin'` to `polls/admin.py`
 
 
 ## Migrate the Database
