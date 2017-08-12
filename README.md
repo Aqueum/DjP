@@ -12,3 +12,31 @@
   - `vagrant up` if first time or `vagrant reload` to load the new vagrant file
   - `vagrant box update` to get latest version
   - `vagrant ssh` to SSH into your new box
+  ? is the issue around the login at this stage - I'm currently in as ubuntu@ubuntu-xenial
+
+the following is from [how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04):
+## Install the Components from the Ubuntu Repositories 
+- `sudo apt-get update`
+- `sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib`
+
+## Create a Database and Database User
+- `sudo -u postgres psql` to log in to PostgreSQL as postgres
+- `CREATE DATABASE myproject;`
+- `CREATE USER myprojectuser WITH PASSWORD 'password';`
+- `ALTER ROLE myprojectuser SET client_encoding TO 'utf8';`
+- `ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';`
+- `ALTER ROLE myprojectuser SET timezone TO 'UTC';`
+- `GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;`
+- `\q` to exit PostgreSQL
+
+## Install Django within a Virtual Environment
+- `sudo -H pip3 install virtualenv` (added the -H at the prompts suggestion)
+- `mkdir ~/myproject`
+- `cd ~/myproject`
+- `virtualenv myprojectenv` to create virtual environment
+- `source myprojectenv/bin/activate`
+- `pip install django psycopg2`
+- `django-admin.py startproject myproject .`
+- ``
+- ``
+- ``
