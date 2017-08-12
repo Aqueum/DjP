@@ -286,11 +286,14 @@ body {
 
 
 
-
-
+## Migrate the Database
+- `python manage.py makemigrations`
 - `python manage.py makemigrations polls` to create migrations for model changes
 - optional `python manage.py sqlmigrate polls 0001` to see what SQL Django thinks is needed
 - optional `python manage.py check` to check for project problems
 - `python manage.py migrate` to create model tables in database
 
-
+## Test App
+- `python manage.py runserver 0.0.0.0:8000`
+- [localhost:8000/polls](http://localhost:8000/polls)
+- [localhost:8000/admin](http://localhost:8000/admin)
