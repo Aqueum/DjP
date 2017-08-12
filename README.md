@@ -197,6 +197,23 @@ class Choice(models.Model):
         return self.choice_text
 
 ```
+## Activate models
+- add `'polls.apps.PollsConfig',` to top of `INSTALLED_APPS`. list in `myproject/myproject/settings.py`
 
+
+
+
+
+
+
+
+
+
+
+
+- `python manage.py makemigrations polls` to create migrations for model changes
+- optional `python manage.py sqlmigrate polls 0001` to see what SQL Django thinks is needed
+- optional `python manage.py check` to check for project problems
+- `python manage.py migrate` to create model tables in database
 
 
