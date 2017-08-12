@@ -22,15 +22,19 @@ the following is from [how-to-use-postgresql-with-your-django-application-on-ubu
 
 ## Create a Database and Database User
 - `sudo -u postgres psql` to log in to PostgreSQL as postgres
-- `CREATE DATABASE myproject;`
-- `CREATE USER myprojectuser WITH PASSWORD 'password';`
-- `ALTER ROLE myprojectuser SET client_encoding TO 'utf8';`
-- `ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';`
-- `ALTER ROLE myprojectuser SET timezone TO 'UTC';`
-- `GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;`
+- enter:
+```
+CREATE DATABASE myproject;
+CREATE USER myprojectuser WITH PASSWORD 'password';
+ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE myprojectuser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+```
 - `\q` to exit PostgreSQL
 
 ## Install Django within a Virtual Environment
+- `sudo -H pip3 install --upgrade pip`(because it always complains)
 - `sudo -H pip3 install virtualenv` (added the -H at the prompts suggestion)
 - `mkdir /vagrant/myproject`
 - `cd /vagrant/myproject`
