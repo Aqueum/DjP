@@ -200,7 +200,33 @@ class Choice(models.Model):
 ## Activate models
 - add `'polls.apps.PollsConfig',` to top of `INSTALLED_APPS`. list in `myproject/myproject/settings.py`
 
+## Admin
+- edit `polls/admin.py` to:
+```
+from django.contrib import admin
 
+from .models import Question
+from .models import Choice
+
+
+class ChoiceInline(admin.TabularInline):
+    model = Choice
+    extra = 0
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,               {'fields': ['question_text']}),
+        ('Date information', {'fields': ['pub_date']}),
+    ]
+    inlines = [ChoiceInline]
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
+    list_filter = ['pub_date']
+    search_fields = ['question_text']
+
+
+admin.site.register(Question, QuestionAdmin)
+```
 
 
 
