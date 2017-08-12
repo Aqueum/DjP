@@ -271,6 +271,18 @@ admin.site.register(Question, QuestionAdmin)
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 ```
 
+## Look and feel
+- add file `polls/static/polls/style.css` with content:
+```
+li a {
+  color: green;
+}
+
+body {
+  background: white url("images/python.gif") no-repeat right bottom;
+}
+```
+- add file `polls/static/polls/images/python.gif`
 
 
 
