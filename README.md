@@ -135,7 +135,7 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 ```
-- Add new polls/urls.py with content:
+- Add new `polls/urls.py` with content:
 ```
 from django.conf.urls import url
 
@@ -150,8 +150,16 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
 ]
 ```
+- Edit `mysite/urls.py` so we have:
+```
+from django.conf.urls import include, url
+from django.contrib import admin
 
-
+urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+```
 
 
 
