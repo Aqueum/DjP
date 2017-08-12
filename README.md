@@ -66,3 +66,26 @@ DATABASES = {
 - `python manage.py runserver 0.0.0.0:8000`
 - [localhost:8000](http://localhost:8000/)
 - [localhost:8000/admin](http://localhost:8000/admin)
+
+End of digitalocean setup tutorial, the following is based on [django polls tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
+
+## Create app
+- ctrl-c to exit server
+- `cd /vagrant/myproject` to get to folder with manage.py
+- `python manage.py startapp polls` to create polls app starter
+
+## Add a view
+- edit `polls/views.py` to: 
+
+
+
+
+
+
+
+
+
+
+
+
+
